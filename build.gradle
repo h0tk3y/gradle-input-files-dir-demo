@@ -1,0 +1,14 @@
+class GreetingTask extends DefaultTask {
+    @TaskAction
+    def greet() {
+        println 'hello world'
+    }
+
+    @InputFiles
+    def input = new File("in")
+
+    @OutputDirectory
+    def output = new File("out")
+}
+
+task build(type: GreetingTask)
